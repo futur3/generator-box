@@ -1,0 +1,37 @@
+{
+  "name": "generator-box",
+  "version": "0.1.0",
+  "description": "Box generator",
+  "license": "MIT",
+  "main": "app/index.js",
+  "repository": "futur3/generator-box",
+  "author": {
+    "name": "Daniele Brugnara",
+    "email": "d.brugnara@futur3.it",
+    "url": "https://github.com/futur3"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "files": [
+    "app"
+  ],
+  "keywords": [
+    "yeoman-generator",
+    "box"
+  ],
+  "dependencies": {
+    "yeoman-generator": "~0.16.0",
+    "chalk": "~0.4.0",
+    "yosay": "^0.1.0"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  },
+  "peerDependencies": {
+    "yo": ">=1.0.0"
+  }
+}
