@@ -33,16 +33,16 @@ var BoxGenerator = yeoman.generators.Base.extend({
         default: cwd
       },
       {
-        name: 'hasRactive',
-        message: 'Do you fucking want ractive int his fucking box? [Y/N]',
-        default: 'Y'
+        name: 'hasBrand',
+        message: 'Does this box require a brandization? [Y/N]',
+        default: 'N'
       }
     ];
 
     this.prompt(prompts, function (props) {
       this.boxName = props.boxName;
       var reg = RegExp(/^y/i);
-      this.hasRactive = reg.test(props.hasRactive);
+      this.hasBrand = reg.test(props.hasBrand);
       //
       done();
     }.bind(this));
