@@ -15,6 +15,8 @@ module.exports = <%= _.capitalize(boxName) %>Box;
 
 function <%= _.capitalize(boxName) %>Box(params, brand) {
   Box.call(this, params);
+  // this identifies this box
+  this.hash = '<%= hash %>';
 <% if (hasRactive) { %>
   this.hasRactive = true;
 <% } %>
