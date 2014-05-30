@@ -4,7 +4,7 @@ var path = require('path');
 var yeoman = require('yeoman-generator');
 var yosay = require('yosay');
 var chalk = require('chalk');
-
+var crypto = require('crypto');
 
 var BoxGenerator = yeoman.generators.Base.extend({
   init: function () {
@@ -49,6 +49,11 @@ var BoxGenerator = yeoman.generators.Base.extend({
       this.boxName = props.boxName;
       this.hasBrand = reg.test(props.hasBrand);
       this.hasRactive = reg.test(props.hasRactive);
+      // random hash
+      this.hash = crypto
+        .createHash('md5')
+        .update('' + Math.random())
+        .digest('hex');
       //
       done();
     }.bind(this));
