@@ -15,11 +15,20 @@ module.exports = <%= _.capitalize(boxName) %>Box;
 
 function <%= _.capitalize(boxName) %>Box(params, brand) {
   Box.call(this, params);
+<% if (hasRactive) { %>
+  this.hasRactive = true;
+<% } %>
   //
   this.attach(template);
-  <% if (hasBrand) { %>
+<% if (hasRactive) { %>
+  // each ractive related thing MUST go after attach()
+  setInterval(function() {
+    this.ractive.set('ts', (new Date()).getTime());
+  }.bind(this), Math.floor(Math.random() * 1000));
+<% } %>
+<% if (hasBrand) { %>
   this.applyBrand(brand);
-  <% } %>
+<% } %>
   this.emit('loaded');
 }
 

@@ -36,13 +36,19 @@ var BoxGenerator = yeoman.generators.Base.extend({
         name: 'hasBrand',
         message: 'Does this box require a brandization? [Y/N]',
         default: 'N'
+      },
+      {
+        name: 'hasRactive',
+        message: 'Wanna ractive on this, uh? [Y/N]',
+        default: 'N'
       }
     ];
 
     this.prompt(prompts, function (props) {
-      this.boxName = props.boxName;
       var reg = RegExp(/^y/i);
+      this.boxName = props.boxName;
       this.hasBrand = reg.test(props.hasBrand);
+      this.hasRactive = reg.test(props.hasRactive);
       //
       done();
     }.bind(this));
